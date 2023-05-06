@@ -1,3 +1,5 @@
+import "tailwindcss/tailwind.css";
+
 import type { ReactNode } from "react";
 
 const Layout = ({ children }: { children: ReactNode }) => {
