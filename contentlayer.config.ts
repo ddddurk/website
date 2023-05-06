@@ -1,7 +1,11 @@
+import moonlitII from "@assets/moonlit-ii.json";
 import {
   defineDocumentType,
   makeSource
 } from "contentlayer/source-files";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
 
 export const Blog = defineDocumentType(() => ({
   computedFields: {
@@ -35,6 +39,7 @@ export const Code = defineDocumentType(() => ({
       type: "string"
     }
   },
+  contentType: "mdx",
   fields: {
     title: {
       required: true,
@@ -42,7 +47,7 @@ export const Code = defineDocumentType(() => ({
     }
   },
   filePathPattern: "code/**/*.mdx",
-  name: "Work"
+  name: "Code"
 }));
 
 export const Work = defineDocumentType(() => ({
@@ -68,5 +73,22 @@ export const Work = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Blog]
+  documentTypes: [Blog, Code, Work],
+  mdx: {
+    rehypePlugins: [
+      [
+        rehypePrettyCode,
+        {
+          onVisitLine(node: any) {
+            if (node.children.length === 0) {
+              node.children = [{ type: "text", value: " " }];
+            }
+          },
+          theme: moonlitII
+        }
+      ],
+      rehypeSlug,
+      rehypeAutolinkHeadings
+    ]
+  }
 });

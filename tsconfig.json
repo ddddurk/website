@@ -12,6 +12,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
+      "@assets/*": ["./assets/*"],
       "@contentlayer": ["./.contentlayer/generated"],
       "@prisma": ["./prisma/ts"]
     },
@@ -25,11 +26,5 @@
     "strict": true,
     "target": "ES6"
   },
-  "exclude": ["node_modules"],
-  "include": [
-    ".next/types/**/*.ts",
-    "next-env.d.ts",
-    "prisma",
-    "src"
-  ]
+  "exclude": ["node_modules"]
 }
