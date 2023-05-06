@@ -15,6 +15,7 @@
       "@assets/*": ["./assets/*"],
       "@contentlayer": ["./.contentlayer/generated"],
       "@prisma": ["./prisma/ts"],
+      "@src/hooks": ["./src/hooks"],
       "@src/lib": ["./src/lib"]
     },
     "plugins": [
