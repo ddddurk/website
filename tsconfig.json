@@ -11,6 +11,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
+    "paths": {
+      "@contentlayer": ["./.contentlayer/generated"]
+    },
     "plugins": [
       {
         "name": "next"
