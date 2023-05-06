@@ -12,7 +12,8 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@contentlayer": ["./.contentlayer/generated"]
+      "@contentlayer": ["./.contentlayer/generated"],
+      "@prisma": ["./prisma/ts"]
     },
     "plugins": [
       {
@@ -25,5 +26,10 @@
     "target": "ES6"
   },
   "exclude": ["node_modules"],
-  "include": [".next/types/**/*.ts", "next-env.d.ts", "src"]
+  "include": [
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "prisma",
+    "src"
+  ]
 }

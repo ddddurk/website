@@ -4,14 +4,16 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "chore:lint": "pnpm chore:lint:prettier && pnpm chore:lint:eslint",
+    "chore:lint": "pnpm chore:lint:prettier && pnpm chore:lint:eslint && pnpm chore:lint:prisma",
     "chore:lint:eslint": "eslint --fix './**/*.{js,json,mdx,ts,tsx,yaml}'",
     "chore:lint:prettier": "prettier --write --plugin-search-dir=. .",
+    "chore:lint:prisma": "prisma format",
     "dev": "next dev",
     "prepare": "husky install",
     "start": "next start"
   },
   "dependencies": {
+    "@prisma/client": "^4.13.0",
     "next": "^13.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -38,6 +40,7 @@
     "next-contentlayer": "^0.3.2",
     "prettier": "^2.8.8",
     "prettier-plugin-packagejson": "^2.4.3",
+    "prisma": "^4.13.0",
     "typescript": "^5.0.4"
   }
 }
