@@ -4,9 +4,15 @@ dependencies:
   '@ddddurk/colors':
     specifier: ^1.1.1
     version: 1.1.1
+  '@dddstack/polymorph-react':
+    specifier: ^1.0.1
+    version: 1.0.1(react@18.2.0)
   '@prisma/client':
     specifier: ^4.13.0
     version: 4.13.0(prisma@4.13.0)
+  clsx:
+    specifier: ^1.2.1
+    version: 1.2.1
   copy-to-clipboard:
     specifier: ^3.3.3
     version: 3.3.3
@@ -492,6 +498,19 @@ packages:
       commander: 10.0.1
       handlebars: 4.7.7
     dev: true
+
+  /@dddstack/polymorph-generics@1.0.1:
+    resolution: {integrity: sha512-m7zyjdxggBTCVe9SqMrMupkPeVRofOuV8WKr8cb7bykMhNi9kyUj995CJNkFqzHYPsR0z1DNq3MkePAXvxkDew==}
+    dev: false
+
+  /@dddstack/polymorph-react@1.0.1(react@18.2.0):
+    resolution: {integrity: sha512-05CLZzlpgh/CQYP/1LIQRV3JDTdVaAQYufgJbIWAbFVTy09G8sKIVfvTaJJC8UN/xjDt0mXI8f7pCVyDQ5oLgQ==}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      '@dddstack/polymorph-generics': 1.0.1
+      react: 18.2.0
+    dev: false
 
   /@effect-ts/core@0.60.5:
     resolution: {integrity: sha512-qi1WrtJA90XLMnj2hnUszW9Sx4dXP03ZJtCc5DiUBIOhF4Vw7plfb65/bdBySPoC9s7zy995TdUX1XBSxUkl5w==}
@@ -2041,6 +2060,11 @@ packages:
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
     dev: true
+
+  /clsx@1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
 
   /color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
