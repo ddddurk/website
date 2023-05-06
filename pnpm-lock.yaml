@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@ddddurk/colors':
+    specifier: ^1.1.1
+    version: 1.1.1
   '@prisma/client':
     specifier: ^4.13.0
     version: 4.13.0(prisma@4.13.0)
@@ -455,7 +458,6 @@ packages:
 
   /@ddddurk/colors@1.1.1:
     resolution: {integrity: sha512-y7gZZR1lh48APoHFU7a/fy5Je0IJIw9V9LjwCLP9Nm/IuHGoPy2N7LQL4qjae/hs141kR/bLu/AK5w8doj7ffA==}
-    dev: true
 
   /@ddddurk/kit@1.1.2:
     resolution: {integrity: sha512-jkSFPdp0DFXmfSBPkDyaav75JpKRdmV216hiO12SW9zy2Qv2F2iq+lZO3tB5l8xeVhquKk4xvKXyW1rEMhNQ3Q==}
