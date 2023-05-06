@@ -8,9 +8,9 @@ import {
   OverlayGradient,
   OverlayGrid
 } from "@src/components";
-import type { ReactNode } from "react";
+import type { NextLayout } from "@src/types";
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({ children }: NextLayout) => {
   return (
     <html lang="en">
       <GridBasic
