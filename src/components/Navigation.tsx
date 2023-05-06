@@ -27,7 +27,7 @@ const mediaQueryClasses = {
 
 export const Navigation = () => {
   return (
-    <nav className="mb-16 md:mb-24 grid grid-cols-[1fr,auto] items-center gap-x-4 md:gap-x-6">
+    <nav className="mb-8 md:mb-16 grid grid-cols-[1fr,auto] items-center gap-x-4 md:gap-x-6">
       <ul className="grid grid-cols-[repeat(auto-fit,minmax(0,max-content))] items-center gap-x-4 text-xl font-medium md:gap-x-6 md:text-2xl">
         {links.internal.map(({ text, ...props }) => (
           <li key={text}>
