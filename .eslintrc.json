@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json.schemastore.org/eslintrc",
+  "extends": ["plugin:json/recommended"],
+  "ignorePatterns": ["node_modules"],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.yaml"],
+      "plugins": ["yaml"],
+      "extends": ["plugin:yaml/recommended"]
+    }
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "json",
+    "prettier",
+    "simple-import-sort",
+    "unused-imports",
+    "yaml"
+  ],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "error",
+    "simple-import-sort/imports": "error",
+    "unused-imports/no-unused-imports": "error"
+  }
+}
