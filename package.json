@@ -27,7 +27,8 @@
     "react-dom": "^18.2.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.9.5",
-    "rehype-slug": "^5.1.0"
+    "rehype-slug": "^5.1.0",
+    "swr": "^2.1.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
