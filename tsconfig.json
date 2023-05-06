@@ -14,7 +14,8 @@
     "paths": {
       "@assets/*": ["./assets/*"],
       "@contentlayer": ["./.contentlayer/generated"],
-      "@prisma": ["./prisma/ts"]
+      "@prisma": ["./prisma/ts"],
+      "@src/lib": ["./src/lib"]
     },
     "plugins": [
       {
