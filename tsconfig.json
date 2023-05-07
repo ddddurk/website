@@ -12,7 +12,6 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@assets/*": ["./assets/*"],
       "@contentlayer": ["./.contentlayer/generated"],
       "@prisma": ["./prisma/ts"],
       "@src/components": ["./src/components"],

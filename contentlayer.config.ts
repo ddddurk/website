@@ -1,4 +1,3 @@
-import moonlitII from "@assets/moonlit-ii.json";
 import {
   defineDocumentType,
   makeSource
@@ -6,6 +5,8 @@ import {
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
+
+import moonlitII from "./assets/moonlit-ii.json";
 
 export const Blog = defineDocumentType(() => ({
   computedFields: {
@@ -62,7 +63,19 @@ export const Work = defineDocumentType(() => ({
       required: true,
       type: "string"
     },
+    isFeatured: {
+      required: false,
+      type: "boolean"
+    },
+    target: {
+      required: true,
+      type: "string"
+    },
     title: {
+      required: true,
+      type: "string"
+    },
+    url: {
       required: true,
       type: "string"
     }
