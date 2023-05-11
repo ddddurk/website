@@ -1,1 +1,1 @@
-[https://ddddurk.com](https://ddddurk.com)
+[ddddurk.com](https://ddddurk.com)

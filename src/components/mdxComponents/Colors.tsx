@@ -6,9 +6,15 @@ import ColorPalette from "../ColorPalette";
 import LinkExternalPill from "../LinkExternalPill";
 
 const links = [
-  { href: "", text: "Figma" },
-  { href: "", text: "GitHub" },
-  { href: "", text: "NPM" }
+  {
+    href: "https://www.figma.com/file/GZqD4uHXSGcULnx4jRdWUv",
+    text: "Figma"
+  },
+  { href: "https://github.com/ddddurk/colors", text: "GitHub" },
+  {
+    href: "https://www.npmjs.com/package/@ddddurk/colors",
+    text: "NPM"
+  }
 ];
 
 const Colors = () => {
