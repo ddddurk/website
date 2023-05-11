@@ -10,6 +10,7 @@ export interface LinkHoverProps
 
 const LinkHover = ({
   children,
+  className,
   href,
   ...props
 }: LinkHoverProps) => {
@@ -21,7 +22,8 @@ const LinkHover = ({
         "p-1",
         isActive
           ? "text-gray-900"
-          : "text-gray-500 hover:text-gray-900"
+          : "text-gray-500 hover:text-gray-900",
+        className
       )}
       href={href ?? ""}
       {...props}

@@ -1,5 +1,6 @@
 export * from "./fetchBlog";
 export * from "./fetchBlogLatest";
+export * from "./fetchBlogBySlug";
 export * from "./fetchCode";
 export * from "./fetchCodeByTitle";
 export * from "./fetchWork";
@@ -11,3 +12,4 @@ export * from "./linkDddStack";
 export * from "./linkEmail";
 export * from "./linkGitHub";
 export * from "./linkLinkedIn";
+export * from "./metadata";

@@ -5,9 +5,9 @@ import {
   linkLinkedIn
 } from "@lib";
 
+import BackToTopButton from "./BackToTopButton";
 import LinkExternalPill from "./LinkExternalPill";
 import LinkHover from "./LinkHover";
-import ScrollToTop from "./ScrollToTop";
 
 const links = {
   external: [
@@ -42,7 +42,7 @@ const links = {
 
 const Footer = () => {
   return (
-    <footer className="mb-12 mt-32 grid gap-4 text-sm md:mb-16 md:mt-40 md:gap-8 md:text-base">
+    <footer className="mb-12 mt-32 grid gap-6 text-sm md:mb-16 md:mt-40 md:gap-8 md:text-base">
       <ul className="grid grid-cols-2 items-center gap-4 md:grid-cols-4 md:gap-6">
         {links.external.map(({ text, ...props }) => (
           <li key={text}>
@@ -59,7 +59,7 @@ const Footer = () => {
           </li>
         ))}
         <li>
-          <ScrollToTop className="text-gray-500 hover:text-gray-900" />
+          <BackToTopButton className="text-gray-500 hover:text-gray-900" />
         </li>
       </ul>
     </footer>

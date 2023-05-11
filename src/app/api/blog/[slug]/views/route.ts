@@ -1,4 +1,4 @@
-import { allBlogs } from "@contentlayer";
+import { fetchBlogBySlug } from "@lib";
 import { prisma } from "@prisma";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
@@ -9,18 +9,18 @@ export const GET = async (
 ) => {
   const { slug } = context.params;
 
-  if (!allBlogs.find((blog) => blog.slug === slug))
+  if (!fetchBlogBySlug(`blog/${slug}`))
     return NextResponse.error();
 
   return NextResponse.json(
-    await prisma.blog.findUnique({
+    (await prisma.blog.findUnique({
       select: {
         id: true,
         slug: true,
         views: true
       },
-      where: { slug }
-    })
+      where: { slug: context.params.slug }
+    })) || { views: 0 }
   );
 };
 
@@ -30,7 +30,7 @@ export const POST = async (
 ) => {
   const { slug } = context.params;
 
-  if (!allBlogs.find((blog) => blog.slug === slug))
+  if (!fetchBlogBySlug(`blog/${slug}`))
     return NextResponse.error();
 
   return NextResponse.json(

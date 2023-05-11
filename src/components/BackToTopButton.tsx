@@ -5,13 +5,13 @@ import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
 import { HiArrowSmallUp } from "react-icons/hi2";
 
-export interface ScrollToTopProps
+export interface BackToTopButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-const ScrollToTop = ({
+const BackToTopButton = ({
   className,
   ...props
-}: ScrollToTopProps) => {
+}: BackToTopButtonProps) => {
   const [scroll] = useScroll({ behavior: "smooth", top: 0 });
 
   return (
@@ -29,4 +29,4 @@ const ScrollToTop = ({
   );
 };
 
-export default ScrollToTop;
+export default BackToTopButton;

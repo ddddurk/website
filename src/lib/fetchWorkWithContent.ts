@@ -1,4 +1,4 @@
 import { fetchWork } from "./fetchWork";
 
 export const fetchWorkWithContent = () =>
-  fetchWork().filter((work) => work.body.code.length > 0);
+  fetchWork().filter((work) => work.body.raw.length > 0);

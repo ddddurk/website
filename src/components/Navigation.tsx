@@ -28,14 +28,14 @@ const mediaQueryClasses = {
 const Navigation = () => {
   return (
     <nav className="mb-12 md:mb-16 grid grid-cols-[1fr,auto] items-center gap-x-4 md:gap-x-6">
-      <ul className="grid grid-cols-[repeat(auto-fit,minmax(0,max-content))] items-center gap-x-4 text-xl font-medium md:gap-x-6 md:text-2xl">
+      <ul className="-ml-1 grid grid-cols-[repeat(auto-fit,minmax(0,max-content))] items-center gap-x-4 text-xl font-medium md:gap-x-6 md:text-2xl">
         {links.internal.map(({ text, ...props }) => (
           <li key={text}>
             <LinkHover {...props}>{text}</LinkHover>
           </li>
         ))}
       </ul>
-      <ul className="grid w-fit items-center gap-x-4 text-sm min-[530px]:grid-cols-2 md:gap-x-6 md:text-base">
+      <ul className="-mr-1 grid w-fit items-center gap-x-4 text-sm min-[530px]:grid-cols-2 md:gap-x-6 md:text-base">
         {links.external.map(({ text, ...props }, i) => (
           <li
             className={clsx(

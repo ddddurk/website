@@ -14,7 +14,7 @@ const links = [
 const Colors = () => {
   return (
     <>
-      <ul className="my-8 grid grid-cols-3 items-center gap-4 md:gap-6">
+      <ul className="mt-4 mb-8 grid grid-cols-3 items-center gap-4 md:gap-6 text-sm md:text-base">
         {links.map(({ text, ...props }) => (
           <li key={text}>
             <LinkExternalPill {...props}>

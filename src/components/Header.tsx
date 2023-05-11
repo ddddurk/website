@@ -1,6 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import p from "./p";
 
 const Header = () => {
+  const pathname = usePathname();
+
   return (
     <header className="mt-16 grid grid-cols-[auto,1fr] gap-x-6 gap-y-0.5 md:gap-x-10 md:gap-y-1.5">
       <Link
@@ -9,12 +16,15 @@ const Header = () => {
       >
         <div className="h-20 w-20 rounded-full bg-white bg-[url('/profile.png')] bg-cover bg-center md:h-24 md:w-24" />
       </Link>
-      <div className="mt-auto text-3xl sm:text-4xl md:text-5xl">
+      <p.div
+        as={pathname === "/" ? "h1" : "div"}
+        className="mt-auto text-3xl sm:text-4xl md:text-5xl"
+      >
         <span className="text-gray-900 font-bold">Durk</span>
         <span className="ml-2 hidden font-extralight text-gray-500 min-[365px]:inline-block">
           @ddddurk
         </span>
-      </div>
+      </p.div>
       <span className="text-gray-500 col-start-2 row-start-2 font-light text-lg md:text-xl">
         <span className="hidden sm:inline-block">
           Data Enthusiast,&nbsp;

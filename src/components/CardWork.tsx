@@ -2,6 +2,7 @@ import type { Work } from "@contentlayer";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 
 import Card from "./Card";
+import CardTitle from "./CardTitle";
 
 export interface CardWorkProps {
   work: Work;
@@ -16,9 +17,9 @@ const CardWork = ({ work }: CardWorkProps) => {
       href={hasContent ? `/${work.slug}` : work.url}
       target={hasContent ? "_self" : "_blank"}
     >
-      <h2 className="!mt-0 overflow-x-hidden text-ellipsis">
+      <CardTitle className="!mt-0 overflow-x-hidden text-ellipsis">
         {work.title}
-      </h2>
+      </CardTitle>
       <div>
         {!hasContent && (
           <HiOutlineArrowUpRight className="text-gray-500 group-hover:text-gray-900" />

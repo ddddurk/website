@@ -10,9 +10,7 @@ export interface ViewsProps {
 const Views = ({ slug, options }: ViewsProps) => {
   const [views] = useViews(slug, options);
 
-  if (!views) return null;
-
-  return <span>{views} Views</span>;
+  return <span>{views || "..."} Views</span>;
 };
 
 export default Views;
