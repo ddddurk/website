@@ -15,6 +15,7 @@
     "dev": "concurrently --names \"next,planetscale\" --prefix-colors \"auto,auto\" \"pnpm dev:next\" \"pnpm dev:planetscale\"",
     "dev:next": "next dev",
     "dev:planetscale": "sh ./scripts/planetscale.sh",
+    "postinstall": "prisma generate",
     "prepare": "husky install",
     "start": "next start"
   },
