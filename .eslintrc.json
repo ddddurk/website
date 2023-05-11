@@ -8,8 +8,11 @@
   "parser": "@typescript-eslint/parser",
   "overrides": [
     {
+      "extends": "plugin:mdx/recommended",
       "files": ["*.mdx"],
-      "extends": "plugin:mdx/recommended"
+      "rules": {
+        "no-unused-expressions": "off"
+      }
     },
     {
       "files": ["*.yaml"],

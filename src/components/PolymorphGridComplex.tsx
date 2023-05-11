@@ -2,7 +2,7 @@ import { polymorph } from "@dddstack/polymorph-react";
 import clsx from "clsx";
 import type { HTMLAttributes } from "react";
 
-export const GridComplex = polymorph(
+const PolymorphGridComplex = polymorph(
   ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => ({
     ...props,
     className: clsx(
@@ -11,3 +11,5 @@ export const GridComplex = polymorph(
     )
   })
 )("div");
+
+export default PolymorphGridComplex;

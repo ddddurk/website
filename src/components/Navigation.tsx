@@ -1,14 +1,14 @@
-import { LINKS_EMAIL, LINKS_GITHUB } from "@src/lib";
+import { linkEmail, linkGitHub } from "@lib";
 import clsx from "clsx";
 
-import { LinkExternal } from "./LinkExternal";
-import { LinkHover } from "./LinkHover";
+import LinkExternalPill from "./LinkExternalPill";
+import LinkHover from "./LinkHover";
 
 const links = {
   external: [
-    { href: LINKS_EMAIL, text: "Contact" },
+    { href: linkEmail, text: "Contact" },
     {
-      href: LINKS_GITHUB,
+      href: linkGitHub,
       target: "_blank",
       text: "GitHub"
     }
@@ -25,9 +25,9 @@ const mediaQueryClasses = {
   1: "min-[530px]:grid"
 };
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
-    <nav className="mb-8 md:mb-16 grid grid-cols-[1fr,auto] items-center gap-x-4 md:gap-x-6">
+    <nav className="mb-12 md:mb-16 grid grid-cols-[1fr,auto] items-center gap-x-4 md:gap-x-6">
       <ul className="grid grid-cols-[repeat(auto-fit,minmax(0,max-content))] items-center gap-x-4 text-xl font-medium md:gap-x-6 md:text-2xl">
         {links.internal.map(({ text, ...props }) => (
           <li key={text}>
@@ -44,15 +44,17 @@ export const Navigation = () => {
             )}
             key={text}
           >
-            <LinkExternal
+            <LinkExternalPill
               className="w-fit text-sm md:!gap-8 md:text-base"
               {...props}
             >
               {text}
-            </LinkExternal>
+            </LinkExternalPill>
           </li>
         ))}
       </ul>
     </nav>
   );
 };
+
+export default Navigation;

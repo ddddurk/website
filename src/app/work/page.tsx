@@ -1,14 +1,17 @@
-import { Cards, CardWork } from "@src/components";
-import { fetchWork } from "@src/lib";
+import { CardList, CardWork } from "@components";
+import { fetchWork } from "@lib";
 import type { NextPage } from "next";
 
 const Page: NextPage = () => {
   return (
-    <Cards as="main">
-      {fetchWork().map((work) => (
-        <CardWork key={work.title} work={work} />
-      ))}
-    </Cards>
+    <>
+      <h1>Work</h1>
+      <CardList>
+        {fetchWork().map((work) => (
+          <CardWork key={work.title} work={work} />
+        ))}
+      </CardList>
+    </>
   );
 };
 

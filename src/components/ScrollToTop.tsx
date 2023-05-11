@@ -1,14 +1,17 @@
 "use client";
 
-import { useScroll } from "@src/hooks";
+import { useScroll } from "@hooks";
 import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
 import { HiArrowSmallUp } from "react-icons/hi2";
 
-export const ScrollToTop = ({
+export interface ScrollToTopProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const ScrollToTop = ({
   className,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement>) => {
+}: ScrollToTopProps) => {
   const [scroll] = useScroll({ behavior: "smooth", top: 0 });
 
   return (
@@ -25,3 +28,5 @@ export const ScrollToTop = ({
     </button>
   );
 };
+
+export default ScrollToTop;

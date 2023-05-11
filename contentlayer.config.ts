@@ -29,17 +29,12 @@ export const Blog = defineDocumentType(() => ({
       type: "string"
     }
   },
+  contentType: "mdx",
   filePathPattern: "blog/**/*.mdx",
   name: "Blog"
 }));
 
 export const Code = defineDocumentType(() => ({
-  computedFields: {
-    slug: {
-      resolve: (content) => content._raw.flattenedPath,
-      type: "string"
-    }
-  },
   contentType: "mdx",
   fields: {
     title: {
@@ -58,6 +53,7 @@ export const Work = defineDocumentType(() => ({
       type: "string"
     }
   },
+  contentType: "mdx",
   fields: {
     description: {
       required: true,
@@ -66,10 +62,6 @@ export const Work = defineDocumentType(() => ({
     isFeatured: {
       required: false,
       type: "boolean"
-    },
-    target: {
-      required: true,
-      type: "string"
     },
     title: {
       required: true,

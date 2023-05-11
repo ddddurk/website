@@ -1,40 +1,32 @@
 import type { Work } from "@contentlayer";
-import clsx from "clsx";
-import type { AnchorHTMLAttributes } from "react";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 
-import { Card } from "./Card";
+import Card from "./Card";
 
-interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export interface CardWorkProps {
   work: Work;
 }
 
-export const CardWork = ({
-  className,
-  work,
-  ...props
-}: Props) => {
+const CardWork = ({ work }: CardWorkProps) => {
+  const hasContent = work.body.raw.length > 0;
+
   return (
     <Card
-      className={clsx(
-        "grid grid-cols-[1fr,auto] gap-x-4 gap-y-1",
-        className
-      )}
-      href={work.url}
-      target={work.target}
-      {...props}
+      className="group grid grid-cols-[1fr,auto] gap-x-4 gap-y-1 md:gap-y-2"
+      href={hasContent ? `/${work.slug}` : work.url}
+      target={hasContent ? "_self" : "_blank"}
     >
-      <h3 className="overflow-x-hidden text-ellipsis text-xl font-medium md:text-2xl">
+      <h2 className="!mt-0 overflow-x-hidden text-ellipsis">
         {work.title}
-      </h3>
+      </h2>
       <div>
-        {work.target === "_blank" && (
-          <HiOutlineArrowUpRight className="text-gray-500" />
+        {!hasContent && (
+          <HiOutlineArrowUpRight className="text-gray-500 group-hover:text-gray-900" />
         )}
       </div>
-      <p className="text-gray-500 md:text-lg">
-        {work.description}
-      </p>
+      <p>{work.description}</p>
     </Card>
   );
 };
+
+export default CardWork;
