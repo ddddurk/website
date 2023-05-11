@@ -1,9 +1,19 @@
 {
   "$schema": "http://json.schemastore.org/eslintrc",
-  "extends": ["plugin:json/recommended"],
-  "ignorePatterns": ["node_modules"],
+  "extends": [
+    "plugin:json/recommended",
+    "plugin:@next/next/recommended"
+  ],
+  "ignorePatterns": [".contentlayer", ".next/", "node_modules"],
   "parser": "@typescript-eslint/parser",
   "overrides": [
+    {
+      "extends": "plugin:mdx/recommended",
+      "files": ["*.mdx"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    },
     {
       "files": ["*.yaml"],
       "plugins": ["yaml"],
@@ -13,6 +23,7 @@
   "plugins": [
     "@typescript-eslint",
     "json",
+    "mdx",
     "prettier",
     "simple-import-sort",
     "unused-imports",
