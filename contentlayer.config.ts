@@ -24,6 +24,10 @@ export const Blog = defineDocumentType(() => ({
       required: true,
       type: "string"
     },
+    isDraft: {
+      required: false,
+      type: "boolean"
+    },
     title: {
       required: true,
       type: "string"
