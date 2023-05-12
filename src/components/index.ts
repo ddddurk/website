@@ -22,7 +22,6 @@ export { default as ColorList } from "./ColorList";
 export * from "./ColorList";
 export { default as ColorPalette } from "./ColorPalette";
 export * from "./ColorPalette";
-export { default as Colors } from "./Colors";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
 export { default as LinkExternalPill } from "./LinkExternalPill";
