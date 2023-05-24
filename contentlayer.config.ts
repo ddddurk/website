@@ -3,6 +3,7 @@ import {
   makeSource
 } from "contentlayer/source-files";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 
@@ -85,6 +86,12 @@ export default makeSource({
   documentTypes: [Blog, Code, Work],
   mdx: {
     rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          target: "_blank"
+        }
+      ],
       [
         rehypePrettyCode,
         {

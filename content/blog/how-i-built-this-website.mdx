@@ -1,6 +1,147 @@
 ---
-date: "TBD"
-description: "In-depth look at the design system, development process, and tech stack for this website."
-isDraft: true
+date: "05/24/23"
+description: "In-depth look at the tech stack, design system, and content choices for this website."
 title: "How I Built This Website"
 ---
+
+In software engineering, seemingly simple solutions oftentimes have vastly more functionality than meets the eye.
+
+This website is an ongoing endeavor striving to achieve that perfect mix – a web application that seamlessly integrates all of the necessary complex technologies for a personal website while providing a visually pleasing and straightforward user experience.
+
+Below is an in-depth look at the tech stack, design system, and content choices for this website.
+
+## Tech Stack
+
+### TypeScript
+
+[TypeScript](https://www.typescriptlang.org) is a statically typed superset of JavaScript providing additional features such as static type checking, better tooling, and enhanced developer experience. I personally enjoy using TypeScript because it greatly speeds up productivity, helps catch potential errors during development, and makes code more maintainable.
+
+Consider the following JavaScript snippet:
+
+```js
+const logs = [
+  { date: "01/01/23", message: "Happy New Year!" },
+  { date: "01/01/23", message: "The Year is now 2023." }
+];
+
+logs.forEach((log) =>
+  // "messge" does not exist...
+  console.log(log.messge);
+);
+```
+
+Until running this code, there would be no way to see the breaking typo. With properly defined TypeScript types; however, this error can be easily detected during development:
+
+```ts
+type Log {
+  date: string;
+  message: string;
+};
+
+const logs: Log[] = [
+  { date: "01/01/23", message: "Happy New Year!" },
+  { date: "01/01/23", message: "The Year is now 2023." }
+];
+
+logs.forEach((log) =>
+  // Property "messge" does not exist on type "Log".
+  console.log(log.messge);
+);
+```
+
+### React
+
+[React](https://react.dev) is the preeminent JavaScript UI library. I like JavaScript frameworks such as React for their component-based architecture and modularity. While considering [Astro](https://astro.build/) and [Solid](https://www.solidjs.com), I ultimately stuck with React because I know it best and it has an extensive ecosystem of libraries.
+
+### Next.js
+
+[Next.js](https://nextjs.org) is a popular framework built on top of React. Next offers built in web optimizations, a file-based router, and most importantly server-side rendering and static site generation. As of Next 13, it even supports React's new [Server Components](https://nextjs.org/docs/getting-started/react-essentials#server-components). In addition, Next has tremendous TypeScript support. I chose Next because I can build with React while still knowing this website will have great performance and SEO optimization.
+
+### PlanetScale
+
+Tracking the view counts for each Blog post requires a database connection. [PlanetScale](https://planetscale.com) is a serverless MySQL platform and managed solution for deploying, maintaining, and scaling databases. With PlanetScale, databases can be branched like code in a Git repository while offering isolated database copies to develop and test schema changes.
+
+### Prisma
+
+[Prisma](https://www.prisma.io) is an open-source Object-Relational Mapping (ORM) for databases. Prisma greatly simplifies database access and management through a type-safe API generated from user-defined models. Combined with PlanetScale, Prisma makes managing a MySQL database incredibly intuitive.
+
+Consider this Prisma model:
+
+```js
+model Blog {
+  id    String @id @default(cuid())
+  slug  String @unique
+  views Int    @default(0)
+}
+```
+
+Now, thanks to Prisma, Blogs can be managed with proper type-safety:
+
+```ts
+// Get all blogs
+await prisma.blog.findMany();
+
+// Update a blog's views
+await prisma.blog.update({
+  data: {
+    views: { increment: 1 }
+  },
+  where: { id: "some-id" }
+});
+```
+
+### ESLint and Prettier
+
+Lastly, [ESLint](https://eslint.org) is a static code analysis tool that helps enforce consisten code syntax and identify potential errors. [Prettier](https://prettier.io) is an opinionated code formatter that automatically formats code to a predefined set of rules. Together, they provide a powerful combination for code consistency, maintainability, and readability. A [GitHub Actions](https://github.com/ddddurk/website/blob/main/.github/workflows/status.yaml) workflow ensures all code reaching production has been properly formatted and adheres to a common syntax.
+
+## Design System
+
+### Tailwind CSS
+
+[Tailwind CSS](https://tailwindcss.com) is a very popular utility-first CSS framework. I normally prefer a more type-safe UI component library such as [Chakra UI](https://chakra-ui.com); however, with React's pivot to Server Components and the resulting [incompatability with CSS-in-JS](https://nextjs.org/docs/app/building-your-application/styling/css-in-js), Tailwind is currently a more stable choice.
+
+### Colors
+
+Although Tailwind comes with an extensive set of predefined colors, I am using my [personal color palette (@ddddurk/colors)](/work/colors).
+
+### Polymorphism
+
+This website's layout is powered through nested [CSS Grids](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout). These grids are made polymorphic through my project [Polymorph (@ddddstack/polymorph)](https://github.com/dddstack/polymorph).
+
+Consider this example polymorphic grid:
+
+```tsx
+import { polymorph } from "@dddstack/polymorph-react";
+import type { HTMLAttributes } from "react";
+
+const PolymorphGrid = polymorph(
+  ({ ...props }: HTMLAttributes<HTMLDivElement>) => ({
+    className:
+      "grid grid-cols-[1fr,min(40rem,100%),1fr] [&>*]:col-span-1 [&>*]:col-start-2 gap-y-4 md:gap-y-8",
+    ...props
+  })
+)("div");
+
+export default PolymorphGrid;
+```
+
+Now, this polymorphic grid can be rendered as any DOM element:
+
+```tsx
+<PolymorphGrid />
+
+// Rendered as <main>
+<PolymorphGrid as="main" />
+```
+
+For more details, view [PolymorphGridBasic](https://github.com/ddddurk/website/blob/main/src/components/PolymorphGridBasic.tsx) and [PolymorphGridComplex](https://github.com/ddddurk/website/blob/main/src/components/PolymorphGridComplex.tsx) from this website's source code.
+
+## Content
+
+### MDX
+
+[MDX](https://mdxjs.com) combines Markdown and JSX enabling React components within markdown and providing a seamless integration between code and content.
+
+### ContentLayer
+
+[ContentLayer](https://www.contentlayer.dev) is a content SDK that validates and transforms content into type-safe JSON data. ContentLayer is perfect for integrating MDX with TypeScript and Next. In addition, ContentLayer automatically handles Markdown plugins for additional features such as [heading slugs](https://github.com/rehypejs/rehype-slug) and [syntax highlighting](https://rehype-pretty-code.netlify.app). I chose ContentLayer to handle blog posts, code snippets, and work data for this website because it seamlessly integrates with Next's file-based router and static site generation.
