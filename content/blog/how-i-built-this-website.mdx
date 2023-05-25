@@ -78,10 +78,10 @@ model Blog {
 Now, thanks to Prisma, Blogs can be managed with proper type-safety:
 
 ```ts
-// Get all blogs
+// Get all Blogs
 await prisma.blog.findMany();
 
-// Update a blog's views
+// Update a Blog's views
 await prisma.blog.update({
   data: {
     views: { increment: 1 }
