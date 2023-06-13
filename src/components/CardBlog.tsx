@@ -3,6 +3,7 @@ import { Card } from "@ddddurk/ui";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 
+import CardText from "./CardText";
 import CardTitle from "./CardTitle";
 import Views from "./Views";
 
@@ -13,7 +14,7 @@ export interface CardBlogProps {
 const CardBlog = ({ blog }: CardBlogProps) => {
   return (
     <Link href={`/${blog.slug}`}>
-      <Card className="grid gap-y-1 md:gap-y-2">
+      <Card className="grid gap-y-1 md:gap-y-2" hover>
         <CardTitle>{blog.title}</CardTitle>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(0,max-content))] items-center gap-x-2 text-sm font-light text-gray-500 md:text-base">
           <span>
@@ -22,7 +23,7 @@ const CardBlog = ({ blog }: CardBlogProps) => {
           <span>&#x2022;</span>
           <Views slug={blog.slug} />
         </div>
-        <p>{blog.description}</p>
+        <CardText>{blog.description}</CardText>
       </Card>
     </Link>
   );

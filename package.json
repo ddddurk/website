@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@ddddurk/colors": "^1.1.1",
-    "@ddddurk/ui": "^1.0.1",
+    "@ddddurk/ui": "^1.1.0",
     "@dddstack/polymorph-react": "^1.0.1",
     "@prisma/client": "^4.14.0",
     "clsx": "^1.2.1",
