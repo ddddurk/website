@@ -20,6 +20,7 @@ const LinkExternalPill = ({
           "w-full grid grid-cols-[1fr,auto] items-center gap-x-2",
           className
         )}
+        hover
       >
         <span className="w-full">{children}</span>
         <HiOutlineArrowUpRight />

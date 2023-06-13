@@ -68,6 +68,10 @@ export const Work = defineDocumentType(() => ({
       required: false,
       type: "boolean"
     },
+    name: {
+      required: false,
+      type: "string"
+    },
     title: {
       required: true,
       type: "string"

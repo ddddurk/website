@@ -12,6 +12,8 @@ export { default as CardList } from "./CardList";
 export * from "./CardList";
 export { default as CardTitle } from "./CardTitle";
 export * from "./CardTitle";
+export { default as CardText } from "./CardText";
+export * from "./CardText";
 export { default as CardWork } from "./CardWork";
 export * from "./CardWork";
 export { default as Color } from "./Color";
