@@ -1,9 +1,9 @@
 import LinkExternalPill from "../LinkExternalPill";
 
 const links = [
-  { href: "https://github.com/ddddurk/colors", text: "GitHub" },
+  { href: "https://github.com/ddddurk/ui", text: "GitHub" },
   {
-    href: "https://www.npmjs.com/package/@ddddurk/colors",
+    href: "https://www.npmjs.com/package/@ddddurk/ui",
     text: "NPM"
   },
   {
