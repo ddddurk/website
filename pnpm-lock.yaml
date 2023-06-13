@@ -1,9 +1,16 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@ddddurk/colors':
     specifier: ^1.1.1
     version: 1.1.1
+  '@ddddurk/ui':
+    specifier: ^1.0.1
+    version: 1.0.1(react@18.2.0)
   '@dddstack/polymorph-react':
     specifier: ^1.0.1
     version: 1.0.1(react@18.2.0)
@@ -497,6 +504,17 @@ packages:
       chalk: 5.2.0
     dev: true
 
+  /@ddddurk/ui@1.0.1(react@18.2.0):
+    resolution: {integrity: sha512-73ETKskcYuy5jusaIA8ZSGJJ6Y1cayaNeaH5kklU3kJvkcERRaLPw229zc4QQ+PC00IPgW2+CfRqwkZuctZjkg==}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      '@dddstack/polymorph-react': 1.0.2(react@18.2.0)
+      clsx: 1.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@dddstack/droplet-core@2.1.5:
     resolution: {integrity: sha512-7X4m2lZ5xw612mOjGg6ms1BcVMcW5w8WZfKDNDcZKTFgzcwIr92l4l5Wjzxy4pxxSF8bLTzRgNmb5CUvmgVwpA==}
     dependencies:
@@ -512,12 +530,25 @@ packages:
     resolution: {integrity: sha512-m7zyjdxggBTCVe9SqMrMupkPeVRofOuV8WKr8cb7bykMhNi9kyUj995CJNkFqzHYPsR0z1DNq3MkePAXvxkDew==}
     dev: false
 
+  /@dddstack/polymorph-generics@1.0.2:
+    resolution: {integrity: sha512-GO1KepzsMXfjLsrpMtWtJf/8wS0wabWXUJV3hHy6ZuiyUNZolikVvP72FOvzIqpuEmbppcYTkxHLG4KvcrG+iw==}
+    dev: false
+
   /@dddstack/polymorph-react@1.0.1(react@18.2.0):
     resolution: {integrity: sha512-05CLZzlpgh/CQYP/1LIQRV3JDTdVaAQYufgJbIWAbFVTy09G8sKIVfvTaJJC8UN/xjDt0mXI8f7pCVyDQ5oLgQ==}
     peerDependencies:
       react: '>=17'
     dependencies:
       '@dddstack/polymorph-generics': 1.0.1
+      react: 18.2.0
+    dev: false
+
+  /@dddstack/polymorph-react@1.0.2(react@18.2.0):
+    resolution: {integrity: sha512-Al3c+pGuB2YLyzjyjPs4JDJSj4MY7OWE+zOBGBMs1wu7GZ/PiUieaCUCSSoIoDXIRogw1eOqpotChHyceu/uwQ==}
+    peerDependencies:
+      react: '>=17'
+    dependencies:
+      '@dddstack/polymorph-generics': 1.0.2
       react: 18.2.0
     dev: false
 

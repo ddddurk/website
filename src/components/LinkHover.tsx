@@ -1,5 +1,6 @@
 "use client";
 
+import { Hover } from "@ddddurk/ui";
 import { clsx } from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,18 +18,17 @@ const LinkHover = ({
   const isActive = usePathname() === href;
 
   return (
-    <Link
-      className={clsx(
-        "p-1",
-        isActive
-          ? "text-gray-900"
-          : "text-gray-500 hover:text-gray-900",
-        className
-      )}
-      href={href ?? ""}
-      {...props}
-    >
-      {children}
+    <Link href={href ?? ""} {...props}>
+      <Hover
+        as="span"
+        className={clsx(
+          "w-fit p-1",
+          { "text-gray-900": isActive },
+          className
+        )}
+      >
+        {children}
+      </Hover>
     </Link>
   );
 };

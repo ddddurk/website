@@ -10,6 +10,8 @@ export const fetchWork = () =>
             ? -1
             : 1
           : -1
+        : b.isFeatured
+        ? 1
         : a.title < b.title
         ? -1
         : 1

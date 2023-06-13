@@ -35,7 +35,7 @@ const Navigation = () => {
           </li>
         ))}
       </ul>
-      <ul className="-mr-1 grid w-fit items-center gap-x-4 text-sm min-[530px]:grid-cols-2 md:gap-x-6 md:text-base">
+      <ul className="grid w-fit items-center gap-x-4 text-sm min-[530px]:grid-cols-2 md:gap-x-6 md:text-base">
         {links.external.map(({ text, ...props }, i) => (
           <li
             className={clsx(

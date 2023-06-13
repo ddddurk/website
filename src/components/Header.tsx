@@ -1,9 +1,8 @@
 "use client";
 
+import { p } from "@ddddurk/ui";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import p from "./p";
 
 const Header = () => {
   const pathname = usePathname();
