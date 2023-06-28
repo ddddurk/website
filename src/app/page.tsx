@@ -4,12 +4,12 @@ import {
   CardWork,
   LinkHover,
   MDX
-} from "@components";
+} from "@src/components";
 import {
   fetchBlogLatest,
   fetchCodeByTitle,
   fetchWorkIsFeatured
-} from "@lib";
+} from "@src/lib";
 import type { NextPage } from "next";
 import { HiArrowRight } from "react-icons/hi2";
 

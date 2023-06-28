@@ -1,4 +1,8 @@
-import { fetchBlog, fetchWorkWithContent, metadata } from "@lib";
+import {
+  fetchBlog,
+  fetchWorkWithContent,
+  metadata
+} from "@src/lib";
 
 const sitemap = () =>
   [

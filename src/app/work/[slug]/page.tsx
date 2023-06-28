@@ -1,5 +1,5 @@
-import { MDX } from "@components";
-import { fetchWorkBySlug, fetchWorkWithContent } from "@lib";
+import { MDX } from "@src/components";
+import { fetchWorkBySlug, fetchWorkWithContent } from "@src/lib";
 import type { NextPage } from "next";
 
 interface PageParams {

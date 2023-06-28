@@ -1,5 +1,5 @@
-import { CardBlog, CardList } from "@components";
-import { fetchBlog } from "@lib";
+import { CardBlog, CardList } from "@src/components";
+import { fetchBlog } from "@src/lib";
 import type { NextPage } from "next";
 
 export const metadata = {

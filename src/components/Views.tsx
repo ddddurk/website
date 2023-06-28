@@ -1,6 +1,6 @@
 "use client";
 
-import { useViews } from "@hooks";
+import { useViews } from "@src/hooks";
 
 export interface ViewsProps {
   slug: Parameters<typeof useViews>[0];

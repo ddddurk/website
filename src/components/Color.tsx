@@ -1,6 +1,6 @@
 "use client";
 
-import { useCopy } from "@hooks";
+import { useCopy } from "@src/hooks";
 import clsx from "clsx";
 
 interface ColorProps {

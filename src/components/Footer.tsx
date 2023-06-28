@@ -3,7 +3,7 @@ import {
   linkEmail,
   linkGitHub,
   linkLinkedIn
-} from "@lib";
+} from "@src/lib";
 
 import BackToTopButton from "./BackToTopButton";
 import LinkExternalPill from "./LinkExternalPill";

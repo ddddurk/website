@@ -1,6 +1,7 @@
 .contentlayer
 .DS_Store
 .env
-.next/
-node_modules/
-tsconfig.tsbuildinfo
+.next
+node_modules
+panda
+*.tsbuildinfo
