@@ -1,8 +1,9 @@
-import { Pill } from "@ddddurk/ui";
 import clsx from "clsx";
 import Link from "next/link";
 import type { AnchorHTMLAttributes } from "react";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
+
+import { Pill } from "./ddddurkUi";
 
 export interface LinkExternalPillProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {}
@@ -20,7 +21,7 @@ const LinkExternalPill = ({
           "w-full grid grid-cols-[1fr,auto] items-center gap-x-2",
           className
         )}
-        hover
+        type="hover"
       >
         <span className="w-full">{children}</span>
         <HiOutlineArrowUpRight />

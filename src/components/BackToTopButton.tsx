@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll } from "@hooks";
+import { useScroll } from "@src/hooks";
 import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
 import { HiArrowSmallUp } from "react-icons/hi2";

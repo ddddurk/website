@@ -3,11 +3,7 @@ import type { Config } from "tailwindcss";
 import tailwindColors from "tailwindcss/colors";
 
 const config: Config = {
-  content: [
-    "./content/**/*.mdx",
-    "./node_modules/@ddddurk/ui/**/*.{js,jsx,ts,tsx}",
-    "./src/**/*.tsx"
-  ],
+  content: ["./content/**/*.mdx", "./src/**/*.tsx"],
   theme: {
     colors: {
       black: ddddurkColors.black.black,

@@ -1,5 +1,5 @@
-import { fetchBlogBySlug } from "@lib";
 import { prisma } from "@prisma";
+import { fetchBlogBySlug } from "@src/lib";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 

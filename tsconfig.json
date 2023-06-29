@@ -12,11 +12,10 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "@components": ["./src/components"],
       "@contentlayer": ["./.contentlayer/generated"],
-      "@hooks": ["./src/hooks"],
-      "@lib": ["./src/lib"],
-      "@prisma": ["./prisma/ts"]
+      "@panda/*": ["./panda/*"],
+      "@prisma": ["./prisma/ts"],
+      "@src/*": ["./src/*"]
     },
     "plugins": [
       {

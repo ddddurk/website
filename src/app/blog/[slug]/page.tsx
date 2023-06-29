@@ -1,5 +1,5 @@
-import { Article, MDX, Views } from "@components";
-import { fetchBlog, fetchBlogBySlug } from "@lib";
+import { Article, MDX, Views } from "@src/components";
+import { fetchBlog, fetchBlogBySlug } from "@src/lib";
 import { format, parseISO } from "date-fns";
 import type { NextPage } from "next";
 

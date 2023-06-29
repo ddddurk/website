@@ -1,4 +1,4 @@
-import "tailwindcss/tailwind.css";
+import "../index.css";
 
 import {
   Body,
@@ -8,8 +8,8 @@ import {
   Navigation,
   OverlayGradient,
   OverlayGrid
-} from "@components";
-import { metadata as libMetadata } from "@lib";
+} from "@src/components";
+import { metadata as libMetadata } from "@src/lib";
 import type { ReactNode } from "react";
 
 export const metadata = libMetadata;

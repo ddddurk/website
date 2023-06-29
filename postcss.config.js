@@ -1,6 +1,8 @@
 module.exports = {
   plugins: {
-    tailwindcss: {},
-    autoprefixer: {}
+    "@pandacss/dev/postcss": {},
+    "@csstools/postcss-cascade-layers": {},
+    autoprefixer: {},
+    tailwindcss: {}
   }
 };

@@ -1,5 +1,5 @@
-import { CardList, CardWork } from "@components";
-import { fetchWork } from "@lib";
+import { CardList, CardWork } from "@src/components";
+import { fetchWork } from "@src/lib";
 import type { NextPage } from "next";
 
 export const metadata = {

@@ -1,11 +1,11 @@
 import type { Work } from "@contentlayer";
-import { Card } from "@ddddurk/ui";
 import Link from "next/link";
 import { HiOutlineArrowUpRight } from "react-icons/hi2";
 
 import CardName from "./CardName";
 import CardText from "./CardText";
 import CardTitle from "./CardTitle";
+import { Card } from "./ddddurkUi";
 
 export interface CardWorkProps {
   work: Work;
@@ -21,7 +21,7 @@ const CardWork = ({ work }: CardWorkProps) => {
     >
       <Card
         className="group grid grid-cols-[1fr,auto] gap-x-4 gap-y-1 md:gap-y-2"
-        hover
+        type="hover"
       >
         <div className="grid grid-cols-[auto,1fr] gap-x-2 items-center">
           <CardTitle className="!mt-0 overflow-x-hidden text-ellipsis">

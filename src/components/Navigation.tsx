@@ -1,4 +1,4 @@
-import { linkEmail, linkGitHub } from "@lib";
+import { linkEmail, linkGitHub } from "@src/lib";
 import clsx from "clsx";
 
 import LinkExternalPill from "./LinkExternalPill";
