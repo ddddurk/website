@@ -1,4 +1,5 @@
 .contentlayer
 .next
+out
 panda
 pnpm-lock.yaml
