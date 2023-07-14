@@ -43,7 +43,7 @@
     "react-icons": "^4.8.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-external-links": "^2.1.0",
-    "rehype-pretty-code": "^0.9.5",
+    "rehype-pretty-code": "^0.10.0",
     "rehype-slug": "^5.1.0",
     "swr": "^2.1.5"
   },
@@ -53,7 +53,7 @@
     "@csstools/postcss-cascade-layers": "^3.0.1",
     "@ddddurk/cli": "^1.1.6",
     "@next/eslint-plugin-next": "^13.4.1",
-    "@pandacss/dev": "^0.5.0",
+    "@pandacss/dev": "^0.6.0",
     "@types/node": "^20.1.0",
     "@types/react": "^18.2.5",
     "@types/react-dom": "^18.2.4",
